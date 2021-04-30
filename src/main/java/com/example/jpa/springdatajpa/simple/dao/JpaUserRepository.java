@@ -1,6 +1,6 @@
-package com.example.jpa.springdatajpa.user.dao;
+package com.example.jpa.springdatajpa.simple.dao;
 
-import com.example.jpa.springdatajpa.user.domain.JpaUser;
+import com.example.jpa.springdatajpa.simple.domain.JpaUser;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

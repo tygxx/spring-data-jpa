@@ -1,9 +1,9 @@
-package com.example.jpa.springdatajpa.user.service;
+package com.example.jpa.springdatajpa.simple.service;
 
 import java.util.List;
 
-import com.example.jpa.springdatajpa.user.dao.JpaUserRepository;
-import com.example.jpa.springdatajpa.user.domain.JpaUser;
+import com.example.jpa.springdatajpa.simple.dao.JpaUserRepository;
+import com.example.jpa.springdatajpa.simple.domain.JpaUser;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

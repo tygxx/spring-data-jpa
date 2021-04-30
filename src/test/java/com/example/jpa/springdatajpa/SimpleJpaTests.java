@@ -1,14 +1,14 @@
 package com.example.jpa.springdatajpa;
 
-import com.example.jpa.springdatajpa.user.domain.JpaUser;
-import com.example.jpa.springdatajpa.user.service.JpaUserService;
+import com.example.jpa.springdatajpa.simple.domain.JpaUser;
+import com.example.jpa.springdatajpa.simple.service.JpaUserService;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SpringDataJpaApplicationTests {
+class SimpleJpaTests {
 
     @Autowired
     private JpaUserService jpaUserService;
@@ -19,6 +19,7 @@ class SpringDataJpaApplicationTests {
         jpaUser.setName("张三");
 
         jpaUserService.insertUser(jpaUser);
+        System.out.println(jpaUserService.findUserById(1L).toString());
     }
 
 }

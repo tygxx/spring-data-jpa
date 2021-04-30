@@ -1,4 +1,4 @@
-package com.example.jpa.springdatajpa.user.domain;
+package com.example.jpa.springdatajpa.simple.domain;
 
 import java.util.Date;
 
@@ -12,9 +12,7 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
-import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
@@ -39,18 +37,10 @@ public class JpaUser {
     @Column(columnDefinition = "VARCHAR(64) CHARACTER SET utf8mb4 comment '用户名'")
     private String name;
 
-    @Column(columnDefinition = "VARCHAR(64) CHARACTER SET utf8mb4 comment '创建者'")
-    @CreatedBy
-    private String createdBy;
-
     @Column(columnDefinition = "datetime comment '创建时间'")
     @CreatedDate
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date createdDate;
-
-    @Column(columnDefinition = "datetime comment '更新者'")
-    @LastModifiedBy
-    private String lastUpdatedBy;
 
     @Column(columnDefinition = "datetime comment '更新时间'")
     @LastModifiedDate
