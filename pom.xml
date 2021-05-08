@@ -6,6 +6,7 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.3.10.RELEASE</version>
+        <!-- <version>1.5.12.RELEASE</version> -->
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example.jpa</groupId>
@@ -27,23 +28,34 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
-        <!--druid连接池-->
+        <!-- 解决to json时hibernate懒加载的问题 -->
         <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-hibernate5</artifactId>
+        </dependency>
+        <!--druid连接池-->
+        <!-- <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid-spring-boot-starter</artifactId>
             <version>1.1.23</version>
-        </dependency>
+        </dependency> -->
         <!--mysql驱动-->
          <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
-
+        
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
 		</dependency>
+        
+        <dependency>  
+            <groupId>com.alibaba</groupId>  
+            <artifactId>fastjson</artifactId>  
+            <version>1.2.41</version>  
+        </dependency> 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>

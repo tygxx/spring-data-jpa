@@ -12,6 +12,7 @@ public interface DepartmentDao extends JpaRepository<Department, Long>, JpaSpeci
     Department findByDeptName(String deptName);
 
     // 通过注解查询
-    @Query("SELECT d FROM Department d WHERE d.deptName = ?1")
+    @Query(value = "SELECT d FROM Department d WHERE d.deptName = ?1")
     Department findByDeptNameQ(String deptName);
+
 }
