@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import javax.persistence.criteria.CriteriaBuilder;
@@ -14,7 +15,6 @@ import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
 import com.alibaba.fastjson.JSONObject;
-import com.alibaba.fastjson.JSONPObject;
 import com.example.jpa.springdatajpa.many.one.dao.DepartmentDao;
 import com.example.jpa.springdatajpa.many.one.dao.EmployeeDao;
 import com.example.jpa.springdatajpa.many.one.domain.Department;
@@ -94,6 +94,17 @@ class ManyToOneJpaTests {
 
         System.out.println("员工:" + employeeOptional.get());
         System.out.println("所属部门:" + employeeOptional.get().getDepartment());// 懒加载
+    }
+
+    /**
+     * 查询员工所属部门
+     */
+    @Test
+    public void getListMapTest() {
+        List<Map<String, Object>> list = employeeDao.getListMap();
+        for (Map<String,Object> map : list) {
+            System.out.println(JSONObject.toJSONString(map));
+        }
     }
 
     /**
@@ -198,7 +209,9 @@ class ManyToOneJpaTests {
         List<Employee> resultList = result.getContent();
         for (Employee employee : resultList) {
             System.out.println("员工名称:" + employee.getEmpName());
-            // System.out.println("员工详情:" + JSONObject.toJSONString(employee));
+            // 如果没有关联查询department时，序列化会报错，所以需要将其置为null
+            employee.setDepartment(null);
+            System.out.println("员工详情:" + JSONObject.toJSONString(employee));
             Department department = employee.getDepartment();
             System.out.println("部门:" + department != null ? JSONObject.toJSONString(department) : "找不到");
         }
