@@ -32,6 +32,7 @@ public class BaseEntity implements Serializable {
 
     @Column(columnDefinition = "datetime comment '创建时间'")
     @CreatedDate
+    // 指定json序列化时的格式,所以从controller响应出json格式时,该字段的格式能如下指定
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date createdDate;
 
