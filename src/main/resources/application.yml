@@ -26,7 +26,7 @@ spring:
     properties:
       hibernate:
         format_sql: true #格式化sql
-        dialect: org.hibernate.dialect.MySQL5Dialect
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
         current_session_context_class: org.springframework.orm.hibernate5.SpringSessionContext
         enable_lazy_load_no_trans: true # 开启懒加载,不开启在实体类中使用 FetchType.LAZY 会报错
 

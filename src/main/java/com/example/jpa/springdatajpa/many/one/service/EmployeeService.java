@@ -9,9 +9,7 @@ import javax.persistence.criteria.Join;
 import javax.persistence.criteria.JoinType;
 import javax.persistence.criteria.Predicate;
 
-import com.alibaba.fastjson.JSONObject;
 import com.example.jpa.springdatajpa.many.one.dao.EmployeeDao;
-import com.example.jpa.springdatajpa.many.one.domain.Department;
 import com.example.jpa.springdatajpa.many.one.domain.Employee;
 import com.example.jpa.springdatajpa.specification.Specifications;
 
